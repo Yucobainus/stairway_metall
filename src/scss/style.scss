@@ -1,0 +1,39 @@
+@import url(null.css);
+@import url(fonts.css);
+
+//Adaptive Value
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: 320) {
+    #{$property}: #{$startSize + px};
+    $addSize: $startSize - $minSize;
+    @media screen and (max-width: #{$containerWidth + px}) {
+        #{$property}: calc(
+            #{$minSize + px} + #{$addSize} * ((100vw - #{$widthTo + px}) / (#{$containerWidth} - #{$widthTo}))
+        );
+    }
+}
+
+//Colors
+$black: #2c2c2c;
+$fontBlack: #000000;
+$listBlack: #444444;
+
+//Widths
+$containerWidth: 1200;
+$minWidth: 320;
+$tabletWidth: 768;
+$mobileWidth: 576;
+$largeDesktop: 1440;
+$smallDesktop: 1024;
+
+// //Fonts
+// $regularFont: 14px;
+// $smallFont: 12px;
+// $mediumFont: 22px;
+// $bigFont: 45px;
+// $titleFont: 36px;
+
+* {
+    font-family: "Geometria", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
