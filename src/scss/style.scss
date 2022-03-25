@@ -25,15 +25,136 @@ $mobileWidth: 576;
 $largeDesktop: 1440;
 $smallDesktop: 1024;
 
-// //Fonts
-// $regularFont: 14px;
-// $smallFont: 12px;
-// $mediumFont: 22px;
-// $bigFont: 45px;
-// $titleFont: 36px;
+//Basic styles
 
 * {
     font-family: "Geometria", sans-serif;
     font-size: 14px;
     font-weight: 400;
+}
+
+.container {
+    max-width: $containerWidth + px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 35px;
+    & img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+//Header
+
+.header {
+    // .header__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        padding: 25px 10px;
+    }
+
+    // .header__info
+
+    &__info {
+        @include adaptiveValue("margin-right", 30, 10, $containerWidth, $tabletWidth);
+        display: flex;
+        // .header__info_logo
+        @media screen and (max-width: #{$containerWidth + px}) {
+            flex-direction: column;
+            &_logo{
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        &_logo {
+            margin-right: 15px;
+        }
+
+        // .header__info_text
+
+        &_text {
+            max-width: 112px;
+            font-size: 0.857rem;
+        }
+    }
+
+    // .header__menu
+
+    &__menu {
+    }
+}
+
+.menu-header {
+
+    // Стили основного списка
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 25px;
+        align-items: center;
+        & li {
+            position: relative;
+        }
+        & li:hover .menu-header__sublist{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    // Стили выпадающего списка
+    &__sublist{
+        visibility: hidden;
+        opacity: 0;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 250px;
+        text-align: center;
+        transition: .2s;
+        box-shadow: -1px -1px 8px 0px rgba(34, 60, 80, 0.2);
+        & li:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        &::before{
+            content: "";
+            padding-top: 70px;
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            background-image: url(../icons/caret_submenu.svg);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            transform: translateX(-50%) translateY(-100%);
+        }
+    }
+
+
+
+    // Дополнительные стили для элементов списка меню
+    &__regular-link {
+        a {
+            font-weight: 500;
+        }
+    }
+    &__image-link {
+        & img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    &__bold-link {
+        a {
+            font-size: 1.571rem;
+        }
+    }
 }
