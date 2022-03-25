@@ -6,3 +6,32 @@ for (var i = 0; i < submenuParents.length; i++) {
         submenuParents[i].children[1].style.left = `${width - submenuWidth}px`
     }
 }
+
+//Бургер, Сайдбар, Иконка в сайдбаре
+const burgerMenu = (icon, menu_body, menu_item) => {
+    const iconMenu = document.querySelector(icon)
+    const menuBody = document.querySelector(menu_body)
+    const mobileItem = document.querySelector(menu_item);
+    const overlay = document.querySelector('.overlay')
+    //Burger Menu
+    if (iconMenu) {
+        iconMenu.addEventListener('click', function (e) {
+            iconMenu.classList.toggle('_active')
+            menuBody.classList.toggle('_active')
+            overlay.classList.toggle('_active')
+            document.body.classList.toggle('_lock')
+        })
+    }
+
+    mobileItem.addEventListener('click', function (e) {
+        iconMenu.classList.remove('_active')
+        overlay.classList.remove('_active')
+        menuBody.classList.remove('_active')
+        document.body.classList.remove('_lock')
+    })
+}
+
+$(document).ready(function () {
+    burgerMenu('.menu-icon', '.header-mobile', '.mobile-close')
+})
+
