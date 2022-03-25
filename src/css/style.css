@@ -16,6 +16,18 @@ body._lock {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
 .logo {
   height: 35px;
 }
@@ -56,15 +68,21 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 576px) {
   .header__container {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    row-gap: 20px;
   }
 }
 
@@ -94,10 +112,8 @@ body._lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-column-gap: 25px;
-          column-gap: 25px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   row-gap: 5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -171,6 +187,12 @@ body._lock {
 .menu-header__image-link img {
   height: 30px;
   width: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-header__image-link {
+    display: none;
+  }
 }
 
 .menu-header__bold-link a {

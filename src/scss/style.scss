@@ -44,6 +44,12 @@ body {
     max-width: $containerWidth + px;
     padding: 10px;
     margin: 0 auto;
+    @media screen and (max-width: #{$smallDesktop + px}) {
+        padding: 0 60px;
+    }
+    @media screen and (max-width: #{$mobileWidth + px}) {
+        padding: 0 10px;
+    }
 }
 
 .logo {
@@ -72,7 +78,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba($color: black, $alpha: 0.5);
-    &._active{
+    &._active {
         display: block;
     }
 }
@@ -84,10 +90,13 @@ body {
     &__container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding-top: 25px;
         padding-bottom: 25px;
-        @media screen and (max-width: #{$containerWidth + px}) {
-            justify-content: space-between;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
         }
     }
 
@@ -107,16 +116,14 @@ body {
             font-size: 0.857rem;
         }
     }
-    // &__menu {
-    // }
+
 }
 
 .menu-header {
     // Стили основного списка
     &__list {
         display: flex;
-        flex-wrap: wrap;
-        column-gap: 25px;
+        column-gap: 20px;
         row-gap: 5px;
         align-items: center;
         & li {
@@ -179,6 +186,9 @@ body {
         & img {
             height: 30px;
             width: 30px;
+        }
+        @media screen and (max-width: #{$smallDesktop + px}) {
+            display: none;
         }
     }
     &__bold-link {
