@@ -116,7 +116,6 @@ body {
             font-size: 0.857rem;
         }
     }
-
 }
 
 .menu-header {
@@ -186,9 +185,9 @@ body {
         & img {
             height: 30px;
             width: 30px;
-        }
-        @media screen and (max-width: #{$smallDesktop + px}) {
-            display: none;
+            @media screen and (max-width: #{$smallDesktop + px}) {
+                display: none;
+            }
         }
     }
     &__bold-link {
@@ -206,10 +205,17 @@ body {
 }
 
 .header-mobile {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
     z-index: 5;
     position: relative;
     position: fixed;
-    padding: 80px 60px;
+    @include adaptiveValue("padding-right", 60, 30, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-left", 60, 30, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-top", 80,35, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-bottom", 80, 35, $containerWidth, $mobileWidth);
+
     height: 100%;
     top: 0;
     right: 0;
@@ -224,9 +230,10 @@ body {
     //Крестик закрытия
     &__close {
         position: absolute;
-        top: 40px;
-        right: 40px;
-        width: 30px;
+        top: 10%;
+        right: 10%;
+        @include adaptiveValue("width", 30, 10, $containerWidth, $mobileWidth);
+
     }
 
     //Стили списка сайдбара
@@ -234,11 +241,31 @@ body {
         & li {
             margin-bottom: 20px;
         }
+        & li:hover .header-mobile__submenu {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            transition: 0.5s;
+        }
     }
     &__submenu {
+        padding-top: 15px;
         display: none;
+        visibility: hidden;
+        transition: 0.5s;
+        & li a {
+            font-size: 1.286rem;
+            font-weight: 500;
+        }
     }
     &__social {
+        margin-top: auto;
+        display: flex;
+        column-gap: 10px;
+        & img {
+            height: 30px;
+            width: 30px;
+        }
     }
 
     &__item {

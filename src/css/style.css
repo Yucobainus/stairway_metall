@@ -190,7 +190,7 @@ body._lock {
 }
 
 @media screen and (max-width: 1024px) {
-  .menu-header__image-link {
+  .menu-header__image-link img {
     display: none;
   }
 }
@@ -211,10 +211,21 @@ body._lock {
 }
 
 .header-mobile {
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: 5;
   position: relative;
   position: fixed;
-  padding: 80px 60px;
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   height: 100%;
   top: 0;
   right: 0;
@@ -226,6 +237,30 @@ body._lock {
   transition: 0.5s;
 }
 
+@media screen and (max-width: 1200px) {
+  .header-mobile {
+    padding-right: calc( 30px + 30 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-mobile {
+    padding-left: calc( 30px + 30 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-mobile {
+    padding-top: calc( 35px + 45 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-mobile {
+    padding-bottom: calc( 35px + 45 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
 .header-mobile._active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -233,17 +268,54 @@ body._lock {
 
 .header-mobile__close {
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 10%;
+  right: 10%;
   width: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header-mobile__close {
+    width: calc( 10px + 20 * ((100vw - 576px) / (1200 - 576)));
+  }
 }
 
 .header-mobile__list li {
   margin-bottom: 20px;
 }
 
+.header-mobile__list li:hover .header-mobile__submenu {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .header-mobile__submenu {
+  padding-top: 15px;
   display: none;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header-mobile__submenu li a {
+  font-size: 1.286rem;
+  font-weight: 500;
+}
+
+.header-mobile__social {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.header-mobile__social img {
+  height: 30px;
+  width: 30px;
 }
 
 .header-mobile__item a {
