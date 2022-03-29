@@ -68,6 +68,7 @@ body {
 .large-title {
     font-size: 2.25rem;
     line-height: 1.2;
+    text-align: center;
     font-weight: 700;
     position: relative;
     &::before {
@@ -607,6 +608,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
     &__overlay {
         z-index: 2;
         position: absolute;
@@ -614,17 +616,13 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
     }
-
     &__container {
-        padding: 70px 30px;
+        padding: 80px 30px;
         position: relative;
         z-index: 3;
     }
-
-    // .callback__title
-
     &__title {
         margin-bottom: 15px;
         & h4 {
@@ -633,9 +631,6 @@ body {
             font-weight: 700;
         }
     }
-
-    // .callback__description
-
     &__description {
         margin-bottom: 40px;
         & span {
@@ -653,10 +648,10 @@ body {
         flex-wrap: wrap;
         align-items: baseline;
         gap: 20px;
-        & div{
+        & div {
             height: 60px;
         }
-        & input[type=text]{
+        & input[type="text"] {
             background-color: transparent;
             color: white;
             font-weight: 500;
@@ -666,7 +661,7 @@ body {
             border-bottom: 1px solid white;
             width: 250px;
         }
-        & input[type=submit]{
+        & input[type="submit"] {
             background-color: transparent;
             font-weight: 600;
             color: white;
@@ -674,5 +669,76 @@ body {
             padding: 0 50px;
             border: 1px solid #ffffff;
         }
+    }
+}
+
+//Каталог древесины
+
+.trees {
+    background-color: $grey;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .trees__title
+
+    &__title {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    // .trees__catalog
+
+    &__catalog {
+        padding: 0 15px;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    // // .trees__item
+
+    // &__item {
+    // }
+}
+
+.item-trees {
+    background-color: white;
+    padding: 15px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__picture {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 15px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .item-trees__title
+
+    &__title {
+        line-height: 1.3;
+        font-weight: 500;
+        font-size: 1.286rem;
+        margin-bottom: 15px;
+    }
+
+    // .item-trees__description
+
+    &__description {
+        line-height: 1.4;
+        font-weight: 400;
     }
 }
