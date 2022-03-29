@@ -13,7 +13,7 @@ body._lock {
 
 .container {
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
@@ -566,6 +566,7 @@ body._lock {
 
 .catalog {
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -733,5 +734,98 @@ body._lock {
 .card-catalog__btn {
   margin-bottom: 0;
   margin-top: auto;
+}
+
+.callback {
+  color: white;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.callback__overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.callback__container {
+  padding: 70px 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.callback__title {
+  margin-bottom: 15px;
+}
+
+.callback__title h4 {
+  font-size: 58px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1200px) {
+  .callback__title h4 {
+    font-size: calc( 32px + 26 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
+.callback__description {
+  margin-bottom: 40px;
+}
+
+.callback__description span {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+  .callback__description span {
+    font-size: calc( 18px + 8 * ((100vw - 576px) / (1200 - 576)));
+  }
+}
+
+.callback__form {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 20px;
+}
+
+.callback__form div {
+  height: 60px;
+}
+
+.callback__form input[type=text] {
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 1.141rem;
+  line-height: 1.33;
+  padding-bottom: 18px;
+  border-bottom: 1px solid white;
+  width: 250px;
+}
+
+.callback__form input[type=submit] {
+  background-color: transparent;
+  font-weight: 600;
+  color: white;
+  height: 100%;
+  padding: 0 50px;
+  border: 1px solid #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
