@@ -42,14 +42,10 @@ body {
 
 .container {
     max-width: $containerWidth + px;
-    padding: 10px;
+    // @include adaptiveValue("padding-right", 10, 10, $largeDesktop, $mobileWidth);
+    // @include adaptiveValue("padding-left", 10, 10, $largeDesktop, $mobileWidth);
+    padding: 0 20px;
     margin: 0 auto;
-    @media screen and (max-width: #{$smallDesktop + px}) {
-        padding: 0 60px;
-    }
-    @media screen and (max-width: #{$mobileWidth + px}) {
-        padding: 0 10px;
-    }
 }
 
 .logo {
@@ -213,8 +209,8 @@ body {
     position: fixed;
     @include adaptiveValue("padding-right", 60, 30, $containerWidth, $mobileWidth);
     @include adaptiveValue("padding-left", 60, 30, $containerWidth, $mobileWidth);
-    @include adaptiveValue("padding-top", 80,35, $containerWidth, $mobileWidth);
-    @include adaptiveValue("padding-bottom", 80, 35, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-top", 50,35, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-bottom", 40, 35, $containerWidth, $mobileWidth);
 
     height: 100%;
     top: 0;
@@ -230,8 +226,8 @@ body {
     //Крестик закрытия
     &__close {
         position: absolute;
-        top: 10%;
-        right: 10%;
+        top: 20px;
+        right: 20px;
         @include adaptiveValue("width", 30, 10, $containerWidth, $mobileWidth);
 
     }
@@ -270,7 +266,7 @@ body {
 
     &__item {
         & a {
-            font-size: 2.714rem;
+            @include adaptiveValue("font-size", 43, 30, $containerWidth, $mobileWidth);
         }
     }
 }
@@ -377,23 +373,33 @@ body {
     &__container {
         display: flex;
         align-items: center;
-        padding-right: 0;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+            text-align: left;
+        }
+    }
+
+    &__info, &__gallery{
+        width: 50%;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+        }
     }
 
     // .banner__info
 
     &__info {
         display: flex;
-        width: 50%;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            margin: 10% 0 ;
+        }
     }
 
     // .banner__gallery
 
     &__gallery {
         display: flex;
-        column-gap: 10px;
-        flex-wrap: wrap;
-        width: 50%;
+        justify-content: space-between;
         &_column {
             display: flex;
             flex-direction: column;
@@ -416,9 +422,14 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+
     &__title {
-        font-size: 3.214rem;
+        @include adaptiveValue("font-size", 52, 37, $containerWidth, $tabletWidth);
         font-weight: 700;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            font-size: 2.25rem;
+            max-width: 458px;
+        }
     }
 
     // .info-banner__text
@@ -430,7 +441,7 @@ body {
     // .info-banner__btn
 
     &__btn {
-        width: 300px;
+        max-width: 300px;
     }
 }
 
