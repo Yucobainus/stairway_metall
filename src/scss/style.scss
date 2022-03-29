@@ -16,7 +16,7 @@
 $black: #2c2c2c;
 $fontBlack: #000000;
 $listBlack: #444444;
-$grey: #f2f2f2;
+$grey: #f4f4f4;
 
 //Widths
 $containerWidth: 1200;
@@ -63,6 +63,23 @@ body {
     text-align: center;
     color: white;
     padding: 20px 0;
+}
+
+.large-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    position: relative;
+    &::before {
+        content: " ";
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        background-color: $black;
+    }
 }
 
 //Перекрытие контента
@@ -209,7 +226,7 @@ body {
     position: fixed;
     @include adaptiveValue("padding-right", 60, 30, $containerWidth, $mobileWidth);
     @include adaptiveValue("padding-left", 60, 30, $containerWidth, $mobileWidth);
-    @include adaptiveValue("padding-top", 50,35, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-top", 50, 35, $containerWidth, $mobileWidth);
     @include adaptiveValue("padding-bottom", 40, 35, $containerWidth, $mobileWidth);
 
     height: 100%;
@@ -229,7 +246,6 @@ body {
         top: 20px;
         right: 20px;
         @include adaptiveValue("width", 30, 10, $containerWidth, $mobileWidth);
-
     }
 
     //Стили списка сайдбара
@@ -379,7 +395,8 @@ body {
         }
     }
 
-    &__info, &__gallery{
+    &__info,
+    &__gallery {
         width: 50%;
         @media screen and (max-width: #{$tabletWidth + px}) {
             width: 100%;
@@ -391,7 +408,7 @@ body {
     &__info {
         display: flex;
         @media screen and (max-width: #{$tabletWidth + px}) {
-            margin: 10% 0 ;
+            margin: 10% 0;
         }
     }
 
@@ -449,28 +466,65 @@ body {
 
 .catalog {
     // .catalog__container
-
+    @include adaptiveValue("margin-top", 80, 60, $largeDesktop, $mobileWidth);
     &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     // .catalog__title
 
     &__title {
+        @include adaptiveValue("margin-bottom", 40, 25, $largeDesktop, $mobileWidth);
+        text-align: center;
     }
 
     // .catalog__card
 
     &__card {
+        margin-bottom: 40px;
     }
 }
 
 .card-catalog {
-    // .card-catalog__info
+    display: flex;
+    background-color: $grey;
+    @media screen and (max-width: #{$smallDesktop + px}) {
+        flex-direction: column;
+    }
+    //Основная структура карточки
+    &__info,
+    &__picture {
+        width: 50%;
+        @media screen and (max-width: #{$smallDesktop + px}) {
+            width: 100%;
+        }
+    }
 
     &__info {
-        // .card-catalog__info_wrapper
-
+        padding: 80px 20px;
+        display: flex;
+        flex-direction: column;
         &_wrapper {
+            display: flex;
+            margin-bottom: 25px;
+            @media screen and (max-width: #{$mobileWidth + px}) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__picture {
+        height: 600px;
+        @media screen and (max-width: 620px) {
+            width: 100%;
+            height: auto;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
@@ -482,30 +536,58 @@ body {
     // .card-catalog__name
 
     &__name {
+        font-size: 1.625rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 20px;
     }
 
     // .card-catalog__prop
 
     &__prop {
+        margin-bottom: 40px;
+        & li {
+            font-size: 1.143rem;
+            font-weight: 500;
+            color: $listBlack;
+            &::before {
+                content: "—";
+            }
+        }
+        & li:not(:last-child) {
+            margin-bottom: 5px;
+        }
     }
 
     // .card-catalog__more
 
     &__more {
+        & a {
+            text-decoration: underline;
+            font-size: 1.143rem;
+            font-weight: 700;
+        }
     }
 
-    // .card-catalog__price
-
+    // Доработать!!!
     &__price {
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            align-self: flex-end;
+        }
+        & span {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 55px 20px;
+            font-weight: 500;
+            white-space: nowrap;
+      
+        }
     }
 
     // .card-catalog__btn
-
     &__btn {
-    }
-
-    // .card-catalog__picture
-
-    &__picture {
+        margin-bottom: 0;
+        margin-top: auto;
     }
 }
