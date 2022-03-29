@@ -488,16 +488,22 @@ body {
 }
 
 .card-catalog {
+    width: 100%;
+    &.reverse{
+        @media screen and (min-width: #{$tabletWidth + 1 + px}) {
+            flex-direction: row-reverse;
+        }
+    }
     display: flex;
     background-color: $grey;
-    @media screen and (max-width: #{$smallDesktop + px}) {
+    @media screen and (max-width: #{$tabletWidth + px}) {
         flex-direction: column;
     }
     //Основная структура карточки
     &__info,
     &__picture {
         width: 50%;
-        @media screen and (max-width: #{$smallDesktop + px}) {
+        @media screen and (max-width: #{$tabletWidth + px}) {
             width: 100%;
         }
     }
@@ -528,10 +534,10 @@ body {
         }
     }
 
-    // .card-catalog__description
+    //Содержание карточки
 
-    &__description {
-    }
+    // &__description {
+    // }
 
     // .card-catalog__name
 

@@ -603,13 +603,23 @@ body._lock {
 }
 
 .card-catalog {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #f4f4f4;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) {
+  .card-catalog.reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .card-catalog {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -622,7 +632,7 @@ body._lock {
   width: 50%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .card-catalog__info, .card-catalog__picture {
     width: 100%;
   }
