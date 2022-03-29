@@ -73,7 +73,7 @@ body {
     position: relative;
     &::before {
         content: " ";
-        top: 0;
+        top: -10px;
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
@@ -139,6 +139,7 @@ body {
         column-gap: 20px;
         row-gap: 5px;
         align-items: center;
+        white-space: nowrap;
         & li {
             position: relative;
         }

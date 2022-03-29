@@ -46,7 +46,7 @@ body._lock {
 
 .large-title::before {
   content: " ";
-  top: 0;
+  top: -10px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -127,6 +127,7 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  white-space: nowrap;
 }
 
 .menu-header__list li {
