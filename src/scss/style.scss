@@ -218,7 +218,7 @@ body {
     }
 
     &__description {
-        line-height: 1.40;
+        line-height: 1.4;
         color: $listBlack;
     }
 }
@@ -950,13 +950,8 @@ body {
 .videoview {
     background-color: $grey;
     padding-top: 150px;
-    // .videoview__container
-
     // &__container {
     // }
-
-    // .videoview__title
-
     &__title {
         margin-bottom: 100px;
     }
@@ -966,7 +961,7 @@ body {
     &__wrapper {
         display: flex;
         column-gap: 80px;
-        @media screen and (max-width: #{$tabletWidth + px}){
+        @media screen and (max-width: #{$tabletWidth + px}) {
             flex-direction: column;
             row-gap: 20px;
         }
@@ -978,13 +973,54 @@ body {
         display: flex;
         flex-direction: column;
         row-gap: 70px;
-        &:nth-child(2){
+        &:nth-child(2) {
             margin-top: 80px;
         }
     }
 
-//     &__card {
-//     }
+    //     &__card {
+    //     }
 }
 
+//Отзывы
 
+.feedback {
+    background-color: $grey;
+    padding-top: 150px;
+    &__container {
+    }
+
+    // .feedback__title
+
+    &__title {
+        margin-bottom: 100px;
+    }
+
+    // .feedback__wrapper
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;   
+        gap: 60px;  
+    }
+
+    // .feedback__column
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        &:first-child{
+            margin-top: 40px;
+        }
+        &:nth-child(2){
+            margin-top: 70px;
+        }
+    }
+
+    // .feedback__item
+
+    &__item {
+    }
+}
