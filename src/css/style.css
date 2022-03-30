@@ -1236,4 +1236,68 @@ body._lock {
 .feedback__column:nth-child(2) {
   margin-top: 70px;
 }
+
+.banner-two {
+  color: white;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f4f4f4;
+}
+
+.banner-two__overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.banner-two__wrapper {
+  padding: 80px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .banner-two__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+.banner-two__info {
+  max-width: 540px;
+}
+
+.banner-two__large-text {
+  font-size: 2.571rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.banner-two__small-text {
+  line-height: 1.40;
+}
+
+.banner-two__btn a {
+  white-space: nowrap;
+  color: black;
+  background-color: white;
+  padding: 20px 55px;
+  font-size: 1.143rem;
+}
 /*# sourceMappingURL=style.css.map */
