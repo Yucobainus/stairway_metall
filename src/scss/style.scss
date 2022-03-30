@@ -65,7 +65,7 @@ body {
     padding: 20px 0;
 }
 
-.large-title {
+.title-large {
     font-size: 2.25rem;
     line-height: 1.2;
     text-align: center;
@@ -97,6 +97,44 @@ body {
     }
 }
 
+//Карточки
+
+.card-two {
+    background-color: white;
+    padding: 15px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__picture {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 15px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .item-trees__title
+
+    &__title {
+        line-height: 1.3;
+        font-weight: 500;
+        font-size: 1.286rem;
+        margin-bottom: 15px;
+    }
+
+    // .item-trees__description
+
+    &__description {
+        line-height: 1.4;
+        font-weight: 400;
+    }
+}
+
 //Header
 
 .header {
@@ -117,7 +155,9 @@ body {
     //Логотип и надпись
     &__info {
         @include adaptiveValue("margin-right", 30, 10, $containerWidth, $tabletWidth);
-        display: flex;
+        & a {
+            display: flex;
+        }
         // .header__info_logo
         &_logo {
             margin-right: 15px;
@@ -708,38 +748,101 @@ body {
     // }
 }
 
-.item-trees {
-    background-color: white;
-    padding: 15px;
-    max-width: 350px;
+//Подход к работе
+
+.work {
+    // .work__container
+    padding-top: 150px;
+    background-color: $grey;
+    &__container {
+    }
+
+    // .work__title
+
+    &__title {
+        margin-bottom: 100px;
+    }
+
+    // .work__list
+
+    &__list {
+    }
+
+    // .work__card
+
+    &__card {
+        border-bottom: 2px solid black;
+        &:first-child {
+            border-top: 2px solid black;
+        }
+    }
+}
+
+.card-three {
+    // .card-three__picture
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    column-gap: 80px;
+    row-gap: 10px;
+    padding: 40px 0;
+    @media screen and (max-width: #{$tabletWidth + px}) {
+        flex-direction: column;
+    }
     &__picture {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 15px;
+        width: 40%;
         & img {
-            height: 100%;
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
         }
     }
 
-    // .item-trees__title
+    // .card-three__info
 
-    &__title {
-        line-height: 1.3;
-        font-weight: 500;
-        font-size: 1.286rem;
-        margin-bottom: 15px;
+    &__info {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 419px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 
-    // .item-trees__description
+    // .card-three__title
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+    }
+
+    // .card-three__title-name
+
+    &__title-name {
+        font-size: 1.857rem;
+        font-weight: 500;
+    }
+
+    // .card-three__title-advantages
+
+    &__title-advantages {
+        color: $listBlack;
+    }
+
+    // .card-three__description
 
     &__description {
-        line-height: 1.4;
-        font-weight: 400;
+        font-size: 1.143rem;
+        color: $listBlack;
     }
 }
