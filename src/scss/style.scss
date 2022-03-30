@@ -204,6 +204,25 @@ body {
     }
 }
 
+.card-video {
+    display: flex;
+    flex-direction: column;
+    &__video {
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-size: 1.286rem;
+        font-weight: 500;
+    }
+
+    &__description {
+        line-height: 1.40;
+        color: $listBlack;
+    }
+}
+
 //Списки
 
 .list-two {
@@ -290,7 +309,7 @@ body {
             visibility: visible;
             opacity: 1;
         }
-        @media screen and (min-width: #{$mobileWidth + px}){
+        @media screen and (min-width: #{$mobileWidth + px}) {
             white-space: nowrap;
         }
     }
@@ -925,4 +944,47 @@ body {
         }
     }
 }
+
+//Видео-обзор
+
+.videoview {
+    background-color: $grey;
+    padding-top: 150px;
+    // .videoview__container
+
+    // &__container {
+    // }
+
+    // .videoview__title
+
+    &__title {
+        margin-bottom: 100px;
+    }
+
+    // .videoview__wrapper
+
+    &__wrapper {
+        display: flex;
+        column-gap: 80px;
+        @media screen and (max-width: #{$tabletWidth + px}){
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+
+    // .videoview__column
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        row-gap: 70px;
+        &:nth-child(2){
+            margin-top: 80px;
+        }
+    }
+
+//     &__card {
+//     }
+}
+
 

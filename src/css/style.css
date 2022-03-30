@@ -207,6 +207,31 @@ body._lock {
   color: #444444;
 }
 
+.card-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-video__video {
+  margin-bottom: 20px;
+}
+
+.card-video__title {
+  margin-bottom: 25px;
+  font-size: 1.286rem;
+  font-weight: 500;
+}
+
+.card-video__description {
+  line-height: 1.40;
+  color: #444444;
+}
+
 .list-two {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1128,5 +1153,47 @@ body._lock {
   .advantages__list {
     width: 100%;
   }
+}
+
+.videoview {
+  background-color: #f4f4f4;
+  padding-top: 150px;
+}
+
+.videoview__title {
+  margin-bottom: 100px;
+}
+
+.videoview__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 80px;
+          column-gap: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .videoview__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+.videoview__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 70px;
+}
+
+.videoview__column:nth-child(2) {
+  margin-top: 80px;
 }
 /*# sourceMappingURL=style.css.map */
