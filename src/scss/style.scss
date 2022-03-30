@@ -118,16 +118,12 @@ body {
         }
     }
 
-    // .item-trees__title
-
     &__title {
         line-height: 1.3;
         font-weight: 500;
         font-size: 1.286rem;
         margin-bottom: 15px;
     }
-
-    // .item-trees__description
 
     &__description {
         line-height: 1.4;
@@ -136,7 +132,6 @@ body {
 }
 
 .card-three {
-    // .card-three__picture
     display: flex;
     column-gap: 80px;
     row-gap: 10px;
@@ -156,8 +151,6 @@ body {
         }
     }
 
-    // .card-three__info
-
     &__info {
         width: 60%;
         display: flex;
@@ -170,8 +163,6 @@ body {
         }
     }
 
-    // .card-three__title
-
     &__title {
         display: flex;
         justify-content: space-between;
@@ -183,20 +174,14 @@ body {
         }
     }
 
-    // .card-three__title-name
-
     &__title-name {
         font-size: 1.857rem;
         font-weight: 500;
     }
 
-    // .card-three__title-advantages
-
     &__title-advantages {
         color: $listBlack;
     }
-
-    // .card-three__description
 
     &__description {
         font-size: 1.143rem;
@@ -226,7 +211,6 @@ body {
 //Списки
 
 .list-two {
-    // .list-two__item
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -241,16 +225,12 @@ body {
         }
     }
 
-    // .list-two__item-title
-
     &__item-title {
         max-width: 200px;
         font-size: 1.286rem;
         font-weight: 500;
         padding-right: 5px;
     }
-
-    // .list-two__item-text
 
     &__item-text {
         max-width: 300px;
@@ -281,12 +261,10 @@ body {
         & a {
             display: flex;
         }
-        // .header__info_logo
+
         &_logo {
             margin-right: 15px;
         }
-
-        // .header__info_text
 
         &_text {
             max-width: 112px;
@@ -551,7 +529,6 @@ body {
 
 //Баннер с галлереей
 .banner {
-    // .banner__container
     background-color: $grey;
     &__container {
         display: flex;
@@ -570,16 +547,12 @@ body {
         }
     }
 
-    // .banner__info
-
     &__info {
         display: flex;
         @media screen and (max-width: #{$tabletWidth + px}) {
             margin: 10% 0;
         }
     }
-
-    // .banner__gallery
 
     &__gallery {
         display: flex;
@@ -602,7 +575,6 @@ body {
     }
 }
 .info-banner {
-    // .info-banner__title
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -616,13 +588,9 @@ body {
         }
     }
 
-    // .info-banner__text
-
     &__text {
         font-size: 1.286rem;
     }
-
-    // .info-banner__btn
 
     &__btn {
         max-width: 300px;
@@ -632,7 +600,6 @@ body {
 //Каталог
 
 .catalog {
-    // .catalog__container
     @include adaptiveValue("margin-top", 80, 60, $largeDesktop, $mobileWidth);
     margin-bottom: 80px;
     &__container {
@@ -641,14 +608,10 @@ body {
         align-items: center;
     }
 
-    // .catalog__title
-
     &__title {
         @include adaptiveValue("margin-bottom", 40, 25, $largeDesktop, $mobileWidth);
         text-align: center;
     }
-
-    // .catalog__card
 
     &__card {
         margin-bottom: 40px;
@@ -707,16 +670,12 @@ body {
     // &__description {
     // }
 
-    // .card-catalog__name
-
     &__name {
         font-size: 1.625rem;
         font-weight: 500;
         line-height: 1.3;
         margin-bottom: 20px;
     }
-
-    // .card-catalog__prop
 
     &__prop {
         margin-bottom: 40px;
@@ -733,8 +692,6 @@ body {
         }
     }
 
-    // .card-catalog__more
-
     &__more {
         & a {
             text-decoration: underline;
@@ -743,7 +700,6 @@ body {
         }
     }
 
-    // Доработать!!!
     &__price {
         @media screen and (max-width: #{$tabletWidth + px}) {
             align-self: flex-end;
@@ -758,7 +714,6 @@ body {
         }
     }
 
-    // .card-catalog__btn
     &__btn {
         margin-bottom: 0;
         margin-top: auto;
@@ -768,7 +723,6 @@ body {
 //Обратная связь
 
 .callback {
-    // .callback__container
     color: white;
     position: relative;
     background-position: center;
@@ -805,8 +759,6 @@ body {
             font-weight: 500;
         }
     }
-
-    // .callback__form
 
     &__form {
         margin-top: 20px;
@@ -848,14 +800,10 @@ body {
         align-items: center;
     }
 
-    // .trees__title
-
     &__title {
         margin-top: 100px;
         margin-bottom: 50px;
     }
-
-    // .trees__catalog
 
     &__catalog {
         padding: 0 15px;
@@ -867,8 +815,6 @@ body {
         justify-content: center;
     }
 
-    // // .trees__item
-
     // &__item {
     // }
 }
@@ -876,11 +822,11 @@ body {
 //Подход к работе
 
 .work {
-    // .work__container
     padding-top: 150px;
     background-color: $grey;
     // &__container {
     // }
+
     &__title {
         margin-bottom: 100px;
     }
@@ -904,13 +850,9 @@ body {
     // &__container {
     // }
 
-    // .advantages__title
-
     &__title {
         margin-bottom: 100px;
     }
-
-    // .advantages__wrapper
 
     &__wrapper {
         display: flex;
@@ -920,8 +862,6 @@ body {
             flex-direction: column;
         }
     }
-
-    // .advantages__picture
 
     &__picture {
         width: 40%;
@@ -934,8 +874,6 @@ body {
             width: 100%;
         }
     }
-
-    // .advantages__list
 
     &__list {
         width: 60%;
@@ -952,11 +890,10 @@ body {
     padding-top: 150px;
     // &__container {
     // }
+
     &__title {
         margin-bottom: 100px;
     }
-
-    // .videoview__wrapper
 
     &__wrapper {
         display: flex;
@@ -966,8 +903,6 @@ body {
             row-gap: 20px;
         }
     }
-
-    // .videoview__column
 
     &__column {
         display: flex;
@@ -987,16 +922,12 @@ body {
 .feedback {
     background-color: $grey;
     padding-top: 150px;
-    &__container {
-    }
-
-    // .feedback__title
+    // &__container {
+    // }
 
     &__title {
         margin-bottom: 100px;
     }
-
-    // .feedback__wrapper
 
     &__wrapper {
         display: flex;
@@ -1004,8 +935,6 @@ body {
         justify-content: center;   
         gap: 60px;  
     }
-
-    // .feedback__column
 
     &__column {
         display: flex;
@@ -1018,9 +947,6 @@ body {
             margin-top: 70px;
         }
     }
-
-    // .feedback__item
-
-    &__item {
-    }
+    // &__item {
+    // }
 }
