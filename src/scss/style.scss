@@ -135,6 +135,110 @@ body {
     }
 }
 
+.card-three {
+    // .card-three__picture
+    display: flex;
+    column-gap: 80px;
+    row-gap: 10px;
+    padding: 40px 0;
+    @media screen and (max-width: #{$tabletWidth + px}) {
+        flex-direction: column;
+    }
+    &__picture {
+        width: 40%;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+        }
+    }
+
+    // .card-three__info
+
+    &__info {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 419px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    // .card-three__title
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+    }
+
+    // .card-three__title-name
+
+    &__title-name {
+        font-size: 1.857rem;
+        font-weight: 500;
+    }
+
+    // .card-three__title-advantages
+
+    &__title-advantages {
+        color: $listBlack;
+    }
+
+    // .card-three__description
+
+    &__description {
+        font-size: 1.143rem;
+        color: $listBlack;
+    }
+}
+
+//Списки
+
+.list-two {
+    // .list-two__item
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid black;
+        padding: 25px 0;
+        @media screen and (max-width: #{$mobileWidth + px} ) {
+            flex-direction: column;
+            row-gap: 5px;
+        }
+    }
+
+    // .list-two__item-title
+
+    &__item-title {
+        max-width: 200px;
+        font-size: 1.286rem;
+        font-weight: 500;
+        padding-right: 5px;
+    }
+
+    // .list-two__item-text
+
+    &__item-text {
+        max-width: 300px;
+        color: $listBlack;
+    }
+}
+
 //Header
 
 .header {
@@ -179,13 +283,15 @@ body {
         column-gap: 20px;
         row-gap: 5px;
         align-items: center;
-        white-space: nowrap;
         & li {
             position: relative;
         }
         & li:hover .menu-header__sublist {
             visibility: visible;
             opacity: 1;
+        }
+        @media screen and (min-width: #{$mobileWidth + px}){
+            white-space: nowrap;
         }
     }
 
@@ -754,21 +860,14 @@ body {
     // .work__container
     padding-top: 150px;
     background-color: $grey;
-    &__container {
-    }
-
-    // .work__title
-
+    // &__container {
+    // }
     &__title {
         margin-bottom: 100px;
     }
 
-    // .work__list
-
-    &__list {
-    }
-
-    // .work__card
+    // &__list {
+    // }
 
     &__card {
         border-bottom: 2px solid black;
@@ -778,15 +877,33 @@ body {
     }
 }
 
-.card-three {
-    // .card-three__picture
-    display: flex;
-    column-gap: 80px;
-    row-gap: 10px;
-    padding: 40px 0;
-    @media screen and (max-width: #{$tabletWidth + px}) {
-        flex-direction: column;
+//Почему выбирают нас
+
+.advantages {
+    background-color: $grey;
+    padding-top: 150px;
+    // &__container {
+    // }
+
+    // .advantages__title
+
+    &__title {
+        margin-bottom: 100px;
     }
+
+    // .advantages__wrapper
+
+    &__wrapper {
+        display: flex;
+        column-gap: 80px;
+        row-gap: 10px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+        }
+    }
+
+    // .advantages__picture
+
     &__picture {
         width: 40%;
         & img {
@@ -799,50 +916,13 @@ body {
         }
     }
 
-    // .card-three__info
+    // .advantages__list
 
-    &__info {
+    &__list {
         width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 419px;
         @media screen and (max-width: #{$tabletWidth + px}) {
             width: 100%;
-            margin: 0 auto;
         }
-    }
-
-    // .card-three__title
-
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-        @media screen and (max-width: #{$tabletWidth + px}) {
-            flex-direction: column;
-            align-items: center;
-            row-gap: 10px;
-        }
-    }
-
-    // .card-three__title-name
-
-    &__title-name {
-        font-size: 1.857rem;
-        font-weight: 500;
-    }
-
-    // .card-three__title-advantages
-
-    &__title-advantages {
-        color: $listBlack;
-    }
-
-    // .card-three__description
-
-    &__description {
-        font-size: 1.143rem;
-        color: $listBlack;
     }
 }
+
