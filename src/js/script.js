@@ -35,7 +35,6 @@ $(document).ready(function () {
     burgerMenu('.menu-icon', '.header-mobile', '.mobile-close')
 
     let accordionsOne = document.querySelectorAll('.accordion-one__item')
-
     accordionsOne.forEach(el => {
         el.addEventListener('click', (e) => {
             const self = e.currentTarget;
