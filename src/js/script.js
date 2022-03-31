@@ -33,5 +33,33 @@ const burgerMenu = (icon, menu_body, menu_item) => {
 
 $(document).ready(function () {
     burgerMenu('.menu-icon', '.header-mobile', '.mobile-close')
+
+    let accordionsOne = document.querySelectorAll('.accordion-one__item')
+
+    accordionsOne.forEach(el => {
+        el.addEventListener('click', (e) => {
+            const self = e.currentTarget;
+            const icon = self.querySelector('.accordion-one__icon')
+            const content = self.querySelector('.accordion-one__text')
+            if (content.classList.contains('_active')) {
+                icon.classList.remove('_active')
+                content.classList.remove('_active')
+                content.style.maxHeight = null;
+                content.setAttribute('aria-expanded', false)
+                content.setAttribute('aria-hidden', true)
+            } else {
+                icon.classList.toggle('_active')
+                content.classList.toggle('_active')
+                content.style.maxHeight = `${content.scrollHeight}px`
+                content.setAttribute('aria-expanded', true)
+                content.setAttribute('aria-hidden', false)
+            }
+        })
+    })
+
+
 })
+
+
+
 
