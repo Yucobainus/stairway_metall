@@ -1466,3 +1466,32 @@ body {
         }
     }
 }
+
+//footer
+
+.footer {
+    background-color: $black;
+    color: white;
+    padding: 80px 0;
+    // .footer__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    // .footer__column
+
+    &__column {
+        padding: 0 5px;
+        & nav ul li {
+            margin-bottom: 15px;
+            & a {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
