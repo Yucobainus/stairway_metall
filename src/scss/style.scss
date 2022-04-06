@@ -83,6 +83,21 @@ body {
     }
 }
 
+//Атомарные стили
+
+.pt-150 {
+    padding-top: 150px;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+.bg-grey {
+    background-color: $grey;
+}
+
 //Перекрытие контента
 .overlay {
     display: none;
@@ -890,8 +905,6 @@ body {
 //Каталог
 
 .catalog {
-    @include adaptiveValue("margin-top", 80, 60, $largeDesktop, $mobileWidth);
-    margin-bottom: 80px;
     &__container {
         display: flex;
         flex-direction: column;
@@ -899,7 +912,6 @@ body {
     }
 
     &__title {
-        @include adaptiveValue("margin-bottom", 40, 25, $largeDesktop, $mobileWidth);
         text-align: center;
     }
 
@@ -908,15 +920,15 @@ body {
     }
 }
 
-.card-catalog {
+.card-one {
     width: 100%;
+    display: flex;
+    background-color: $grey;
     &.reverse {
         @media screen and (min-width: #{$tabletWidth + 1 + px}) {
             flex-direction: row-reverse;
         }
     }
-    display: flex;
-    background-color: $grey;
     @media screen and (max-width: #{$tabletWidth + px}) {
         flex-direction: column;
     }
@@ -924,8 +936,15 @@ body {
     &__info,
     &__picture {
         width: 50%;
+        height: 500px;
         @media screen and (max-width: #{$tabletWidth + px}) {
             width: 100%;
+            height: 100%;
+        }
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
@@ -943,10 +962,10 @@ body {
     }
 
     &__picture {
-        height: 600px;
+
         @media screen and (max-width: 620px) {
-            width: 100%;
-            height: auto;
+            width: 100%; 
+            height: 100%;  
         }
         & img {
             width: 100%;
@@ -1009,7 +1028,6 @@ body {
         margin-top: auto;
     }
 }
-
 //Обратная связь
 
 .callback {
@@ -1083,17 +1101,13 @@ body {
 //Каталог древесины
 
 .trees {
-    background-color: $grey;
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
-    &__title {
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
+    // &__title {
+    // }
 
     &__catalog {
         padding: 0 15px;
@@ -1107,21 +1121,17 @@ body {
 
     &__item {
         padding: 15px;
-        max-width: 350px;
+        width: 350px;
     }
 }
 
 //Подход к работе
 
 .work {
-    padding-top: 150px;
-    background-color: $grey;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     // &__list {
     // }
@@ -1137,14 +1147,10 @@ body {
 //Почему выбирают нас
 
 .advantages {
-    background-color: $grey;
-    padding-top: 150px;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     &__wrapper {
         display: flex;
@@ -1178,14 +1184,10 @@ body {
 //Видео-обзор
 
 .videoview {
-    background-color: $grey;
-    padding-top: 150px;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     &__wrapper {
         display: flex;
@@ -1212,14 +1214,10 @@ body {
 //Отзывы
 
 .feedback {
-    background-color: $grey;
-    padding-top: 150px;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     &__wrapper {
         display: flex;
@@ -1251,8 +1249,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: $grey;
-
     &__overlay {
         z-index: 2;
         position: absolute;
@@ -1305,19 +1301,12 @@ body {
 //Faq
 
 .faq {
-    background-color: $grey;
-    padding-top: 150px;
-    padding-bottom: 50px;
-    &__container {
-    }
-
-    &__title {
-        margin-bottom: 100px;
-    }
-
+    // &__container {
+    // }
+    // &__title {
+    // }
     // &__wrapper {
     // }
-
     // &__accordion {
     // }
 }
@@ -1325,16 +1314,12 @@ body {
 //About
 
 .about {
-    padding: 150px 10px 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
-
-    // .about__info
-
+    // &__title {
+    // }
     &__info {
         margin-bottom: 80px;
     }
@@ -1343,13 +1328,11 @@ body {
 //Блог
 
 .blog {
-    padding-top: 150px;
     // &__container {
     // }
 
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     &__wrapper {
         display: flex;
@@ -1361,26 +1344,28 @@ body {
     &__item {
         max-width: 260px;
         text-align: left;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            max-width: 100%;
+            margin-bottom: 30px;
+            & .card-two__picture {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }
 
 //Контакты
 
 .contacts {
-    background-color: $grey;
-    padding-top: 150px;
-    padding-bottom: 100px;
     // &__container {
     // }
-
-    &__title {
-        margin-bottom: 100px;
-    }
+    // &__title {
+    // }
 
     &__form {
         margin-top: 30px;
     }
-
     &__item {
         margin-bottom: 10px;
         & a {
@@ -1402,7 +1387,6 @@ body {
         }
     }
 }
-
 .form-two {
     // .form-two__title
     text-align: center;
@@ -1467,6 +1451,66 @@ body {
     }
 }
 
+.portfolio {
+    // &__container {
+    // }
+    // &__title {
+    // }
+
+    // .portfolio__gallery
+
+    &__gallery {
+    }
+}
+.gallery-three {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    &__row {
+        display: flex;
+        gap: 30px;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            flex-direction: column;
+        }
+    }
+
+    // .gallery-three__column
+
+    &__column {
+        // .gallery-three__column_fullsize
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+        }
+        // &_fullsize {
+        // }
+        &._grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    // .gallery-three__item
+
+    &__item {
+        height: 100%;
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+        &.group {
+            display: flex;
+            justify-content: space-between;
+            & img {
+                width: calc((100% / 3) - 15px);
+            }
+        }
+    }
+}
+
 //footer
 
 .footer {
@@ -1494,4 +1538,3 @@ body {
         }
     }
 }
-
