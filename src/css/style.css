@@ -7,6 +7,10 @@
   font-weight: 400;
 }
 
+input:focus {
+  outline: none;
+}
+
 body._lock {
   overflow: hidden;
 }
