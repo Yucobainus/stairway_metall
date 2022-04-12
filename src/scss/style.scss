@@ -1,5 +1,6 @@
 @import url(null.css);
 @import url(fonts.css);
+@import url(stairways.css);
 
 //Adaptive Value
 @mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: 320) {
@@ -34,7 +35,7 @@ $smallDesktop: 1024;
     font-weight: 400;
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
@@ -100,6 +101,40 @@ body {
 }
 .bg-grey {
     background-color: $grey;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.text-20 {
+    font-size: 1.429rem;
+}
+
+.text-16 {
+    font-size: 1.143rem;
+}
+
+.text-18 {
+    font-size: 1.286rem;
+}
+
+.text-26-bold {
+    font-size: 1.857rem;
+    font-weight: 700;
+}
+
+.title-medium {
+    font-size: 42px;
+    font-weight: 700;
 }
 
 //Перекрытие контента
@@ -966,10 +1001,9 @@ body {
     }
 
     &__picture {
-
         @media screen and (max-width: 620px) {
-            width: 100%; 
-            height: 100%;  
+            width: 100%;
+            height: 100%;
         }
         & img {
             width: 100%;
@@ -1034,7 +1068,7 @@ body {
 }
 //Обратная связь
 
-.callback {
+.banner-one {
     color: white;
     position: relative;
     background-position: center;
@@ -1516,7 +1550,6 @@ body {
 }
 
 //footer
-
 .footer {
     background-color: $black;
     color: white;
@@ -1538,6 +1571,269 @@ body {
             margin-bottom: 15px;
             & a {
                 font-weight: 500;
+            }
+        }
+    }
+}
+
+//banner-three
+.banner-three {
+    position: relative;
+    &__container {
+        position: relative;
+        z-index: 4;
+    }
+    @include adaptiveValue("padding-top", 220, 80, $largeDesktop, $mobileWidth);
+    @include adaptiveValue("padding-bottom", 220, 80, $largeDesktop, $mobileWidth);
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    & div {
+        margin-bottom: 15px;
+    }
+    &__title {
+        & h2 {
+            @include adaptiveValue("font-size", 52, 30, $largeDesktop, $mobileWidth);
+            font-weight: 700;
+        }
+    }
+    &__text {
+        font-size: 1.375rem;
+    }
+    &__btn {
+        display: inline-block;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        padding: 20px 60px;
+    }
+}
+
+//info-four
+.info-four {
+    &__container {
+        display: flex;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column-reverse;
+            row-gap: 20px;
+        }
+    }
+
+    &__gallery {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    // .info-four__gallery-item
+
+    &__gallery-item {
+        width: calc(50% - 40px);
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+        }
+    }
+
+    // .info-four__text
+
+    &__text {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 20px;
+        line-height: 1.5;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+        }
+    }
+}
+
+//info-five
+
+.info-five {
+    // .info-five__container
+
+    &__container {
+        display: flex;
+        column-gap: 80px;
+        & div {
+            width: 50%;
+        }
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+            & div {
+                width: 100%;
+            }
+        }
+    }
+
+    // .info-five__text
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 15px;
+        line-height: 1.5;
+        & ul {
+            padding-left: 15px;
+            li {
+                list-style: disc;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .info-five__gallery
+
+    &__gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    // .info-five__gallery-item
+
+    &__gallery-item {
+        max-height: 600px;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &.big-item {
+            width: calc(100% - 15px);
+            @media screen and (max-width: #{$mobileWidth + px}) {
+                width: 100%;
+            }
+        }
+        &.medium-item {
+            width: calc(50% - 15px);
+            @media screen and (max-width: #{$mobileWidth + px}) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//info-six
+
+.info-six {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 45px;
+        align-items: center;
+    }
+    // .info-six__list-number
+
+    &__list-number {
+        max-width: 800px;
+        & span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 5px;
+        }
+        & ul li {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list-marker {
+        display: flex;
+        column-gap: 50px;
+        max-width: 800px;
+        & ul li {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+        @media screen and (max-width: #{$mobileWidth + px} ) {
+            flex-direction: column;
+        }
+    }
+
+    // .info-six__text
+
+    &__text {
+        max-width: 800px;
+    }
+}
+
+//gallery-four
+
+.gallery-four {
+    // .gallery-four__container
+
+    &__container {
+        text-align: center;
+        & .title-medium {
+            margin-bottom: 30px;
+        }
+    }
+
+    // .gallery-four__wrapper
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            flex-direction: column;
+        }
+    }
+
+    // .gallery-four__item
+
+    &__item {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+        }
+        &.fullwidth {
+            & .gallery-four__picture {
+                width: 631px;
+            }
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &.grid {
+            display: flex;
+            flex-wrap: wrap;
+            & .gallery-four__picture {
+                width: 50%;
+                height: 50%;
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                @media screen and (max-width: #{$mobileWidth + px}) {
+                    height: 340px;
+                }
             }
         }
     }

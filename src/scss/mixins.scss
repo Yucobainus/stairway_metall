@@ -1,0 +1,9 @@
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: 320) {
+    #{$property}: #{$startSize + px};
+    $addSize: $startSize - $minSize;
+    @media screen and (max-width: #{$containerWidth + px}) {
+        #{$property}: calc(
+            #{$minSize + px} + #{$addSize} * ((100vw - #{$widthTo + px}) / (#{$containerWidth} - #{$widthTo}))
+        );
+    }
+}
