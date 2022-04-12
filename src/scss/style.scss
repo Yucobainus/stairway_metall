@@ -137,6 +137,11 @@ body {
     font-weight: 700;
 }
 
+.title-small {
+    font-size: 36px;
+    font-weight: 700;
+}
+
 //Перекрытие контента
 .overlay {
     display: none;
@@ -1779,6 +1784,79 @@ body {
     }
 }
 
+//info-seven
+
+.info-seven {
+    // .info-seven__container
+
+    &__container {
+        display: flex;
+        line-height: 1.25;
+        column-gap: 22px;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    // .info-seven__title
+
+    &__title {
+        width: 40%;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+        }
+    }
+
+    // .info-seven__text
+
+    &__text {
+        width: 60%;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+        }
+    }
+}
+
+//info-eight
+
+.info-eight {
+    background-color: $grey;
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            flex-direction: column;
+        }
+    }
+
+    // .info-eight__text
+
+    &__text {
+        width: 50%;
+        line-height: 1.22;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+        }
+    }
+
+    // .info-eight__picture
+
+    &__picture {
+        width: 50%;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            width: 100%;
+        }
+    }
+}
+
 //gallery-four
 
 .gallery-four {
@@ -1835,6 +1913,39 @@ body {
                     height: 340px;
                 }
             }
+        }
+    }
+}
+
+//banner-four
+
+.banner-four {
+    // .banner-four__container
+
+    &__container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+    }
+
+    // .banner-four__info
+
+    &__info {
+        max-width: 800px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: rgb(135, 135, 135); //Цвет используется один раз, по этому не стал выносить в переменную
+    }
+
+    // .banner-four__picture
+
+    &__picture {
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
