@@ -115,6 +115,11 @@ body {
     flex-direction: row;
 }
 
+.text-10{
+    font-size: 0.714rem;
+    font-weight: 500;
+}
+
 .text-16 {
     font-size: 1.143rem;
 }
@@ -203,6 +208,11 @@ body {
     &__description {
         line-height: 1.4;
         font-weight: 400;
+    }
+    &__date{
+        margin-top: 20px;
+        width: 100%;
+        color: rgba(0,0,0,.5);
     }
 }
 
@@ -1398,6 +1408,20 @@ body {
     &__item {
         max-width: 260px;
         text-align: left;
+        padding: 20px;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        & .card-two__picture {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__item.page-blog {
+        max-width: calc(33.333333%);
+        text-align: left;
         @media screen and (max-width: #{$mobileWidth + px}) {
             max-width: 100%;
             margin-bottom: 30px;
@@ -1407,6 +1431,7 @@ body {
             }
         }
     }
+
 }
 
 //Контакты
@@ -2016,7 +2041,7 @@ body {
         }
         &.fullwidth {
             & .gallery-four__picture {
-                width: 631px;
+                width: 100%
             }
             & img {
                 width: 100%;
@@ -2289,7 +2314,6 @@ body {
 .bread-nav {
     padding: 90px 0;
     // .bread-nav__wrapper
-
     &__wrapper {
         display: flex;
         justify-content: center;
@@ -2307,4 +2331,10 @@ body {
     // .bread-nav__caret
     // &__caret {
     // }
+    @media screen and (max-width: #{$tabletWidth + px}){
+        padding: 60px 0;
+    }
+    @media screen and (max-width: #{$mobileWidth + px}) {
+        padding: 40px 0;
+    }
 }
